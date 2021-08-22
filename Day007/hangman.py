@@ -1,71 +1,17 @@
 import random
-
+import hangman_wordlist as words
+import hangman_art as art
 #Step 1
 
-word_list = ["aardvark", "baboon", "camel"]
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
+
+print(art.logo)
 
 
 
 
 gameover= False
 #TODO-1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word.
-word=random.choice(word_list)
+word=random.choice(words.word_list)
 #This is meant to test the code
 print("The word is: "+ word)
 display=[]
@@ -74,7 +20,7 @@ for i in range(0,len(word)):
 lives=0
 #TODO-2 - Ask the user to guess a letter and assign their answer to a variable called guess. Make guess lowercase.
 while(not gameover):
-    print(stages[lives])
+    print(art.stages[lives])
     player_choice=input("Pick a letter: ").lower()
 #TODO-3 - Check if the letter the user guessed (guess) is one of the letters in the chosen_word.
     in_display=False
@@ -82,7 +28,7 @@ while(not gameover):
         if word[i]==player_choice:
             display[i]=player_choice
             in_display=True
-        
+
     if "_" not in display:
         print("You solved the word!")
         gameover=True
@@ -90,9 +36,6 @@ while(not gameover):
     if not in_display:
         print("Letter is not in the word")
         lives+=1
-    if lives==(len(stages)-1):
+    if lives==(len(art.stages)-1):
         gameover=True
         print("Couldnt solve the word, GAME OVER")
-        
-        
-
