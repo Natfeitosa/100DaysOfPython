@@ -8,4 +8,4 @@ This is where I post all the python Projects I complete from the Udemy course<br
 - Day004-To learn the random module and how lists work in python
 - Day005- To learn how loops work in python
 - Day007- To learn how to use custom modules and create hangman game
-- Day008- To learn how to manipulate strings
+- Day008- To learn how to use functions with inputs
