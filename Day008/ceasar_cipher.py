@@ -27,7 +27,7 @@ def decrypt(word,key):
 
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
+shift = (int(input("Type the shift number:\n")))%26
 if direction=="encode":
     encrypt(text,shift)
 elif direction=="decode":
